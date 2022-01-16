@@ -4,44 +4,73 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
+
         //Задание 1
-        int[] payment = generateRandomArray();
-        int sum1 = 0; //why sum is 0 and for what
-        for (int i = 0; i < payment.length; i++) {
-            sum1 += payment[i];
-            System.out.println("sum of expenses for month is " + sum1);
-        }
+        System.out.println("Задание 1");
 
+        int[] payments = generateRandomArray();
+        int sum = 0;
+        for (int i = 0; i < payments.length; i++) {
+            sum = sum + payments[i];
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей");
+
+        System.out.println();
         //Задание 2
-        int[] salary = generateRandomArray();
-        int max = 0;
-        int min = 1;
-        for (int ii = 0; ii < salary.length; ii++) {
-            if (max < salary[ii]) {
-                max = salary[ii];
-            }
-            if (min < salary[ii]); //how to know min and max
-        }
-        System.out.println(max);
+        System.out.println("Задание 2");
 
-        //Задание 3
         int[] expenses = generateRandomArray();
-        float sum = 0;
-        for (int a = 0; a < expenses.length; a++) {
-            sum = sum + expenses[a]; //why?
-            float mid = sum / expenses.length;
-            System.out.println("Middle expenses sum for month is " + mid);
+        int min = expenses[0];
+        int max = expenses[0];
+        for (int i = 0; i < expenses.length; i++) {
+            if(expenses[i] < min ) {
+                min = expenses[i];
+            }
+            if (expenses[i] > max) {
+                max = expenses[i];
+            }
         }
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей");
+        System.out.println("Максимальная сумма трат за день составила " + max + " рублей");
 
+        System.out.println();
+        //Задание 3
+        System.out.println("Задание 3");
+
+        int [] monthSum = generateRandomArray();
+        float sum1 = 0;
+        for (int i = 0; i < monthSum.length; i++) {
+            sum += monthSum[i];
+        }
+        float average = sum / (float)monthSum.length;
+        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
+
+        System.out.println();
         //Задание 4
+        System.out.println("Задание 4");
 
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int b = reverseFullName.length-1; b >= 0 ; b--) {
-            System.out.print(reverseFullName[b]);
+        for (int i = reverseFullName.length-1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
         }
+        System.out.println();
+        System.out.println();
+        //Задание 5
+        System.out.println("Задание 5");
 
+        int [][] matrix = new int [3][3];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                matrix[i][j] = 1;
+            }
+        }
+        for (int[] row : matrix) {
+        	for (int column : row) {
+        		System.out.print(column + " ");
+        	}
+        	System.out.println();
+        }
     }
-    int[] arr = generateRandomArray();
 
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
