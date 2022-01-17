@@ -58,10 +58,24 @@ public class Main {
         //Задание 5
         System.out.println("Задание 5");
 
-        int [][] matrix = new int [3][3];
+        int [][] array2D = new int [5][10];
+          for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[i].length; j++) {
+                array2D[i][j] = 1;
+            }
+        }
+       for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[i].length; j++) {
+                System.out.print(array2D[i][j] + " ");
+    }
+            System.out.println();
+       }
+        System.out.println("Задание 5 version 2");
+        int [][] matrix = new int [5][10];
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] = 1;
+                matrix[i][matrix.length - 1 - i] = 1;
             }
         }
         for (int[] row : matrix) {
